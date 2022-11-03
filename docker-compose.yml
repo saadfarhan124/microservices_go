@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  web_blog:
+    container_name: web_blog
+    build:
+      context: ./services/web_blog
+      dockerfile: Dockerfile
+    ports:
+      - 3069:3069
