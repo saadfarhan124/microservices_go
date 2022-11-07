@@ -8,3 +8,5 @@ services:
       dockerfile: Dockerfile
     ports:
       - 3069:3069
+    volumes:
+      - ./services/web_blog/:/go/src/app
