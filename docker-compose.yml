@@ -10,3 +10,18 @@ services:
       - 3069:3069
     volumes:
       - ./services/web_blog/:/go/src/app
+    depends_on:
+      - db
+    links:
+      - db
+
+  db:
+    container_name: db
+    build:
+      context: ./services/db
+      dockerfile: Dockerfile
+    ports:
+      - 5435:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
