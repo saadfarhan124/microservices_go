@@ -11,6 +11,15 @@ type AuthorAddPostBody struct {
 	Title string `json:"title" validate:"required"`
 }
 
+type AuthorDeletePostBody struct {
+	Id int `json:"id" validate:"required"`
+}
+
+type AuthorUpdatePostBody struct {
+	Id    int    `json:"id" validate:"required"`
+	Title string `json:"title" validate:"required"`
+}
+
 var validate = validator.New()
 
 func ValidateStruct(postBody interface{}) []*ErrorResponse {
