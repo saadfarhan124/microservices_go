@@ -123,7 +123,7 @@ func UpdateAuthor(c *fiber.Ctx) error {
 	// Use our post body validation function to validate postbody
 	// Return 400 if invalid json or postbody
 	if err := utilities.PostBodyValidation(c, postBody); err != nil {
-		return c.Status(fiber.StatusInternalServerError).JSON(err)
+		return c.Status(fiber.StatusBadRequest).JSON(err)
 	} else {
 		// Create author object using ID and title from postbody
 		author := &models.Authors{Id: postBody.Id, Title: postBody.Title}
